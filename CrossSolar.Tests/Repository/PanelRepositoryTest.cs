@@ -28,7 +28,7 @@ namespace CrossSolar.Tests.Repository
             Assert.NotNull(current);
             Assert.Equal(expected.Brand, current.Brand);
             Assert.Equal(expected.Latitude, current.Latitude);
-            Assert.Equal(expected.Longitude, current.Longitude);
+            Assert.Equal(expected.Longitude, current.Longitude);  
             Assert.Equal(expected.Serial, current.Serial);
         }
 
