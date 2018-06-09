@@ -11,7 +11,7 @@ namespace CrossSolar.Repository
     {
         protected CrossSolarDbContext _dbContext { get; set; }
 
-        public async Task<T> GetAsync(string id)
+        public async Task<T> GetAsync(int id)
         {
             return await _dbContext.FindAsync<T>(id);
         }
@@ -21,10 +21,10 @@ namespace CrossSolar.Repository
             return _dbContext.Set<T>().AsQueryable();
         }
 
-        public async Task InsertAsync(T entity)
-        { 
+        public async Task<int> InsertAsync(T entity)
+        {
             _dbContext.Set<T>().Add(entity);
-            await _dbContext.SaveChangesAsync();
+            return await _dbContext.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(T entity)
@@ -32,5 +32,11 @@ namespace CrossSolar.Repository
             _dbContext.Entry(entity).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
+
+        public bool Exist(int id)
+        {
+            return _dbContext.Set<T>().Find(id) != null;
+        }
+
     }
 }

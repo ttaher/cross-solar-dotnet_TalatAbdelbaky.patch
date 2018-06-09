@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CrossSolar.Domain
 {
@@ -16,5 +17,6 @@ namespace CrossSolar.Domain
 
         public string Brand { get; set; }
 
+        public List<OneHourElectricity> OneHourElectricitys { get; set; }
     }
 }
