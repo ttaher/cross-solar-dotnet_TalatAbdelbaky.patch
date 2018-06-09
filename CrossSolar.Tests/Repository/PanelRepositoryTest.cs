@@ -14,7 +14,7 @@ namespace CrossSolar.Tests.Repository
     {
         PanelRepository _repository;
 
-        public PanelRepositoryTest()
+        public PanelRepositoryTest() 
         {
             CrossSolarInMemoryDbContextProvider contextProvider = new CrossSolarInMemoryDbContextProvider();
             
@@ -30,7 +30,7 @@ namespace CrossSolar.Tests.Repository
             Assert.Equal(expected.Latitude, current.Latitude);
             Assert.Equal(expected.Longitude, current.Longitude);  
             Assert.Equal(expected.Serial, current.Serial);
-        }
+        }  
 
 
         [Fact]
